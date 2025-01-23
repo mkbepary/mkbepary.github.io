@@ -40,7 +40,24 @@
 
 	</head>
 
+	<!-- Google tag (gtag.js) & Google Analytics -->
+	<script>
+        fetch('./assets/js/config.json')
+            .then(response => response.json())
+            .then(config => {
+                const scriptTag = document.createElement('script');
+                scriptTag.async = true;
+                scriptTag.src = `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsMeasurementId}`;
+                document.head.appendChild(scriptTag);
 
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', config.googleAnalyticsMeasurementId);
+            })
+            .catch(error => console.error('Error loading the configuration:', error));
+    </script>
 
 	<body>
 
