@@ -320,6 +320,7 @@ function clearActiveLinks() {
 function clearActiveDivs() {
 	$('.section-panel.active').each(function() {
 		$(this).removeClass('active');
+		$(this).attr('hidden', true);
 	});
 }
 
@@ -335,7 +336,7 @@ function activateLink(elem) {
 
 // Activates the div
 function activateDiv(divId) {
-	$(divId).addClass('active');
+	$(divId).removeAttr('hidden').addClass('active');
 
 	// Scrolls to the content
 	scrollToContent(divId);
