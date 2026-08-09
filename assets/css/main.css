@@ -32,6 +32,14 @@ a {
 	margin-top: 20px;
 }
 
+.section-panel {
+	display: none;
+}
+
+.section-panel.active {
+	display: block;
+}
+
 li > .active {
 	font-weight: 500;
 }
@@ -62,8 +70,17 @@ li > .active {
 	margin-right: auto;
 }
 
+#leftPanel .row.mb-2 {
+	align-items: center;
+}
+
+#leftPanel .col-1 {
+	min-width: 24px;
+	text-align: center;
+}
+
 .fseneca {
-	max-width: 50%; 
+	max-width: 50%;
 	height: auto;
 }
 

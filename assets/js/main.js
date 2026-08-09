@@ -1,16 +1,4 @@
 $(document).ready(function(){
-	// By default, all the divs are hidden, if you were to add a new div, you should hide it here.
-	// If you want to show a div, you should clic on the corresponding link on the navbar.
-	$('#educationContent').hide();
-	$('#publicationsContent').hide();
-	$('#experienceContent').hide();
-	$('#conferencesContent').hide();
-	$('#projectsContent').hide();
-	$('#blogContent').hide();
-	$('#academicContent').hide();
-	$('#resourcesContent').hide();
-	// $('#photosContent').hide();
-
 	// Options menu is hidden by default
 	$('#theme').hide();
 	$('#lan').hide();
@@ -255,7 +243,7 @@ $('#resources').click(function(e) {
 			rel: 'stylesheet',
 			href: 'assets/css/dark.css'
 		});
-		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+		$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 	}
 
 	// Controls the option menu toggler to show/hide the language and theme selectors
@@ -275,7 +263,7 @@ $('#resources').click(function(e) {
 	// Alternates between light and dark themes
 	$('#theme').click(function(e) {
 		if(localStorage.theme != "dark"){
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+			$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 
 			localStorage.theme = "dark"
 			
@@ -287,7 +275,7 @@ $('#resources').click(function(e) {
 			});
 		}
 		else {
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
+			$('#theme').empty().append("<i class='fa-regular fa-lightbulb'></i>");
 
 			localStorage.theme = "light"
 			
@@ -320,9 +308,8 @@ function clearActiveLinks() {
 
 // Clears the active divs
 function clearActiveDivs() {
-	$('.container .content .active').each(function() {
+	$('.section-panel.active').each(function() {
 		$(this).removeClass('active');
-		$(this).hide();
 	});
 }
 
@@ -340,7 +327,6 @@ function activateLink(e) {
 // Activates the div
 function activateDiv(divId) {
 	$(divId).addClass('active');
-	$(divId).show();
 
 	// Scrolls to the content
 	scrollToContent(divId);
@@ -348,9 +334,9 @@ function activateDiv(divId) {
 
 // Scrolls to the content
 function scrollToContent(divId) {
-	if ($(window).width() < 751) {
-		$('html, body').animate({
-			scrollTop: $(divId).offset().top
-		}, 1);
-	}
+	var target = $(window).width() < 768 ? $(divId) : $('#main-content');
+
+	$('html, body').animate({
+		scrollTop: target.offset().top
+	}, 150);
 }
