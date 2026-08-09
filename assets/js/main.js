@@ -1,14 +1,13 @@
 $(document).ready(function(){
-	// By default, all the divs are hidden, if you were to add a new div, you should hide it here.
-	// If you want to show a div, you should clic on the corresponding link on the navbar.
-	$('#educationContent').hide();
-	$('#publicationsContent').hide();
-	$('#experienceContent').hide();
-	$('#conferencesContent').hide();
-	$('#projectsContent').hide();
-	$('#blogContent').hide();
-	$('#academicContent').hide();
-	$('#resourcesContent').hide();
+	// By default, hide all content sections using Bootstrap d-none so grid/flex behavior remains
+	$('#educationContent').addClass('d-none');
+	$('#publicationsContent').addClass('d-none');
+	$('#experienceContent').addClass('d-none');
+	$('#conferencesContent').addClass('d-none');
+	$('#projectsContent').addClass('d-none');
+	$('#blogContent').addClass('d-none');
+	$('#academicContent').addClass('d-none');
+	$('#resourcesContent').addClass('d-none');
 	// $('#photosContent').hide();
 
 	// Options menu is hidden by default
@@ -17,12 +16,13 @@ $(document).ready(function(){
 
 	// Handle 'About Me' content
 	$('#aboutme').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			activateLink(e);
+		if(!$(this).hasClass('active')) {
+				// Update navbar
+				clearActiveLinks();
+				$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -35,12 +35,13 @@ $(document).ready(function(){
 
 	// Handle 'Education' content
 	$('#education').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -52,12 +53,13 @@ $(document).ready(function(){
 
 	// Handle 'Publications' content
 	$('#publications').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -69,12 +71,13 @@ $(document).ready(function(){
 
 	// Handle 'Blog' content
 	$('#blog').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -86,12 +89,13 @@ $(document).ready(function(){
 
 	// Handle 'Academic' content
 	$('#academic').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -103,12 +107,13 @@ $(document).ready(function(){
 
 	// Handle 'Particular' content
 	$('#particular').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -120,12 +125,13 @@ $(document).ready(function(){
 
 	// Handle 'Conferences' content
 	$('#conferences').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -137,12 +143,13 @@ $(document).ready(function(){
 
 	// Handle 'Experience' content
 	$('#experience').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+	if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -154,12 +161,13 @@ $(document).ready(function(){
 
 	// Handle 'Projects' content
 	$('#projects').click(function(e) {
+		e.preventDefault();
 
 		// If the div has already the class active, no need to reload the divs...
-		if(!$(e.target).hasClass('active')) {
+		if(!$(this).hasClass('active')) {
 			// Update navbar
 			clearActiveLinks();
-			activateLink(e);
+			$(this).addClass('active');
 
 			// Hide other contents
 			clearActiveDivs();
@@ -171,12 +179,13 @@ $(document).ready(function(){
 	
 	// Handle 'Resources' content
 $('#resources').click(function(e) {
+		e.preventDefault();
 
 	// If the div has already the class active, no need to reload the divs...
-	if(!$(e.target).hasClass('active')) {
+if(!$(this).hasClass('active')) {
 		// Update navbar
 		clearActiveLinks();
-		activateLink(e);
+			$(this).addClass('active');
 
 		// Hide other contents
 		clearActiveDivs();
@@ -255,7 +264,7 @@ $('#resources').click(function(e) {
 			rel: 'stylesheet',
 			href: 'assets/css/dark.css'
 		});
-		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+		$('#theme').empty().append("<i class='fas fa-moon'></i>");
 	}
 
 	// Controls the option menu toggler to show/hide the language and theme selectors
@@ -275,7 +284,7 @@ $('#resources').click(function(e) {
 	// Alternates between light and dark themes
 	$('#theme').click(function(e) {
 		if(localStorage.theme != "dark"){
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+				$('#theme').empty().append("<i class='fas fa-moon'></i>");
 
 			localStorage.theme = "dark"
 			
@@ -287,7 +296,7 @@ $('#resources').click(function(e) {
 			});
 		}
 		else {
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
+			$('#theme').empty().append("<i class='fas fa-sun'></i>");
 
 			localStorage.theme = "light"
 			
@@ -320,18 +329,18 @@ function clearActiveLinks() {
 
 // Clears the active divs
 function clearActiveDivs() {
-	$('.container .content .active').each(function() {
+	// hide any section that follows the left panel; matches ids ending in 'Content'
+	$('div[id$="Content"]').each(function() {
 		$(this).removeClass('active');
-		$(this).hide();
+		$(this).addClass('d-none');
 	});
 }
 
 // Activates the link
-function activateLink(e) {
-	$(e.target).addClass('active');
-	
-	// Hide left panel
-	if(e.target.id == "particular")
+function activateLink(elem) {
+	// Accept either an event or an element. Ensure left panel visibility.
+	var tgt = elem && elem.currentTarget ? elem.currentTarget : (elem && elem.id ? elem : null);
+	if (tgt && tgt.id == "particular")
 		$('#leftPanel').hide();
 	else
 		$('#leftPanel').show();
@@ -340,7 +349,7 @@ function activateLink(e) {
 // Activates the div
 function activateDiv(divId) {
 	$(divId).addClass('active');
-	$(divId).show();
+	$(divId).removeClass('d-none');
 
 	// Scrolls to the content
 	scrollToContent(divId);

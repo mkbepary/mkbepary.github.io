@@ -32,6 +32,32 @@ a {
 	margin-top: 20px;
 }
 
+/* Normalize inner content wrappers so all sections align with left panel */
+.content-inner {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+/* Prevent margin collapsing from a first-child element inside .content-inner
+   which can push the section down relative to sibling columns. */
+.content-inner {
+	display: flow-root;
+}
+.content-inner > .row:first-child {
+	margin-top: 0;
+}
+/* Ensure any element that is the first child inside content-inner does not add extra top offset */
+.content-inner > :first-child {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+/* Normalize heading top margins inside content-inner */
+.content-inner h1, .content-inner h2, .content-inner h3, .content-inner h4, .content-inner h5 {
+	margin-top: 0.25rem;
+}
+
 li > .active {
 	font-weight: 500;
 }
