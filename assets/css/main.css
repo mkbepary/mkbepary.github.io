@@ -32,6 +32,14 @@ a {
 	margin-top: 20px;
 }
 
+.section-panel {
+	display: none;
+}
+
+.section-panel.active {
+	display: block;
+}
+
 /* Normalize inner content wrappers so all sections align with left panel */
 .content-inner {
 	padding: 0;
@@ -88,8 +96,17 @@ li > .active {
 	margin-right: auto;
 }
 
+#leftPanel .row.mb-2 {
+	align-items: center;
+}
+
+#leftPanel .col-1 {
+	min-width: 24px;
+	text-align: center;
+}
+
 .fseneca {
-	max-width: 50%; 
+	max-width: 50%;
 	height: auto;
 }
 

@@ -1,15 +1,4 @@
 $(document).ready(function(){
-	// By default, hide all content sections using Bootstrap d-none so grid/flex behavior remains
-	$('#educationContent').addClass('d-none');
-	$('#publicationsContent').addClass('d-none');
-	$('#experienceContent').addClass('d-none');
-	$('#conferencesContent').addClass('d-none');
-	$('#projectsContent').addClass('d-none');
-	$('#blogContent').addClass('d-none');
-	$('#academicContent').addClass('d-none');
-	$('#resourcesContent').addClass('d-none');
-	// $('#photosContent').hide();
-
 	// Options menu is hidden by default
 	$('#theme').hide();
 	$('#lan').hide();
@@ -264,7 +253,7 @@ if(!$(this).hasClass('active')) {
 			rel: 'stylesheet',
 			href: 'assets/css/dark.css'
 		});
-		$('#theme').empty().append("<i class='fas fa-moon'></i>");
+		$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 	}
 
 	// Controls the option menu toggler to show/hide the language and theme selectors
@@ -284,7 +273,7 @@ if(!$(this).hasClass('active')) {
 	// Alternates between light and dark themes
 	$('#theme').click(function(e) {
 		if(localStorage.theme != "dark"){
-				$('#theme').empty().append("<i class='fas fa-moon'></i>");
+			$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 
 			localStorage.theme = "dark"
 			
@@ -296,7 +285,7 @@ if(!$(this).hasClass('active')) {
 			});
 		}
 		else {
-			$('#theme').empty().append("<i class='fas fa-sun'></i>");
+			$('#theme').empty().append("<i class='fa-regular fa-lightbulb'></i>");
 
 			localStorage.theme = "light"
 			
@@ -329,10 +318,8 @@ function clearActiveLinks() {
 
 // Clears the active divs
 function clearActiveDivs() {
-	// hide any section that follows the left panel; matches ids ending in 'Content'
-	$('div[id$="Content"]').each(function() {
+	$('.section-panel.active').each(function() {
 		$(this).removeClass('active');
-		$(this).addClass('d-none');
 	});
 }
 
@@ -349,7 +336,6 @@ function activateLink(elem) {
 // Activates the div
 function activateDiv(divId) {
 	$(divId).addClass('active');
-	$(divId).removeClass('d-none');
 
 	// Scrolls to the content
 	scrollToContent(divId);
@@ -357,9 +343,9 @@ function activateDiv(divId) {
 
 // Scrolls to the content
 function scrollToContent(divId) {
-	if ($(window).width() < 751) {
-		$('html, body').animate({
-			scrollTop: $(divId).offset().top
-		}, 1);
-	}
+	var target = $(window).width() < 768 ? $(divId) : $('#main-content');
+
+	$('html, body').animate({
+		scrollTop: target.offset().top
+	}, 150);
 }
