@@ -255,32 +255,6 @@ h1, h2, h3 {
 	gap: 0.85rem;
 }
 
-.focus-list {
-	border-top: 1px solid var(--border-color);
-	display: grid;
-	gap: 0;
-	margin-top: 1rem;
-}
-
-.focus-item {
-	border-bottom: 1px solid var(--border-color);
-	display: grid;
-	gap: 0.8rem;
-	grid-template-columns: 130px 1fr;
-	padding: 0.85rem 0;
-}
-
-.focus-item span {
-	color: var(--heading-color);
-	font-size: 0.9rem;
-	font-weight: 760;
-}
-
-.focus-item p {
-	color: var(--muted-color);
-	margin: 0;
-}
-
 .update-item {
 	background: var(--surface-color);
 	border: 1px solid var(--border-color);
@@ -527,11 +501,6 @@ h1, h2, h3 {
 
 	.update-item {
 		grid-template-columns: 1fr;
-	}
-
-	.focus-item {
-		grid-template-columns: 1fr;
-		gap: 0.25rem;
 	}
 
 	.section-heading-row {
