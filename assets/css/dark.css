@@ -1,79 +1,45 @@
 :root {
-	--t-color: #D8DEE9;
-	--h-color: #ffff;
-
-	--bg-color: #383838;
-	--nv-color: #121212;
+	--bg-color: #111817;
+	--surface-color: #182321;
+	--surface-muted: #20312e;
+	--t-color: #dbe7e4;
+	--muted-color: #9fb0ad;
+	--heading-color: #f5fbfa;
+	--accent-color: #68c7be;
+	--accent-strong: #9ad9d3;
+	--accent-soft: #163d39;
+	--secondary-accent: #9bbcf3;
+	--border-color: #2d423f;
+	--shadow-color: rgba(0, 0, 0, 0.2);
+	--nav-color: #0d1312;
 }
 
 body {
 	background-color: var(--bg-color);
-	color: var(--t-color)
-}
-
-h1, h2, h3, h4, b {
-	color: var(--h-color) !important;
+	color: var(--t-color);
 }
 
 #top-nav {
-	background-color: var(--nv-color) !important;
-}
-
-.nav-link {
-	color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.nav-link:hover{
-	color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.link-dark {
-	color: var(--h-color) !important;
-}
-
-.link-dark:hover, .link-dark:focus {
-	color: #DBDBDB !important;
+	background-color: var(--nav-color) !important;
 }
 
 .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28245, 251, 250, 0.72%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-toggler:focus {
-	box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7) !important;
+	box-shadow: 0 0 0 0.18rem rgba(79, 209, 197, 0.26) !important;
 }
 
-/* OPTION BUTTON */
 .options-button {
-	background-color: var(--bs-gray-700);
-	border: 1px solid #fff;
+	background-color: var(--surface-color);
+	border: 1px solid var(--border-color);
+	box-shadow: 0 8px 20px var(--shadow-color);
+	color: var(--accent-strong);
 }
 
-#options-toggler {
-	box-shadow: 0px 3px 50px rgba(0,0,0,0.2);
-}
-
+#theme:hover,
+#lan:hover,
 #options-toggler:hover {
-	box-shadow: 0px 3px 50px rgba(0,0,0,0.3);
-}
-
-#theme:hover, #lan:hover {
-	background-color: var(--bg-color);
-}
-
-/* TEACHING RELATED */
-.academic-name {
-	color: #0dcaf0;
-}
-
-.academic-block {
-	border-left: 2px #0dcaf0 solid;
-}
-
-.student-block {
-	border-left: 2px #00FFC1 solid;
-}
-
-.student-name {
-	color: #00FFC1;
+	background-color: var(--surface-muted);
 }

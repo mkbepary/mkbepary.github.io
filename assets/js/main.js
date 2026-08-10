@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	const themeVersion = "revamp-1";
+
 	// Options menu is hidden by default
 	$('#theme').hide();
 	$('#lan').hide();
@@ -20,24 +22,6 @@ $(document).ready(function(){
 			activateDiv('#aboutmeContent');
 		}
 
-	});
-
-	// Handle 'Education' content
-	$('#education').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#educationContent');
-		}
 	});
 
 	// Handle 'Publications' content
@@ -130,7 +114,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Experience' content
+	// Handle 'Profile' content
 	$('#experience').click(function(e) {
 		e.preventDefault();
 
@@ -148,7 +132,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// Handle 'Projects' content
+	// Handle 'Research' content
 	$('#projects').click(function(e) {
 		e.preventDefault();
 
@@ -240,18 +224,18 @@ if(!$(this).hasClass('active')) {
 
 	// Always load the light theme
 	$('<link>').appendTo('head').attr({
-		type: 'text/css', 
+		type: 'text/css',
 		rel: 'stylesheet',
-		href: 'assets/css/light.css'
+		href: 'assets/css/light.css?v=' + themeVersion
 	});
 
 	// If the user has the dark theme, then replace the light theme with the dark one
 	if (localStorage.theme == "dark") {
-		$("link[href='assets/css/light.css']").remove();
+		$("link[href^='assets/css/light.css']").remove();
 		$('<link>').appendTo('head').attr({
-			type: 'text/css', 
+			type: 'text/css',
 			rel: 'stylesheet',
-			href: 'assets/css/dark.css'
+			href: 'assets/css/dark.css?v=' + themeVersion
 		});
 		$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 	}
@@ -276,24 +260,24 @@ if(!$(this).hasClass('active')) {
 			$('#theme').empty().append("<i class='fa-solid fa-lightbulb'></i>");
 
 			localStorage.theme = "dark"
-			
-			$("link[href='assets/css/light.css']").remove();
+
+			$("link[href^='assets/css/light.css']").remove();
 			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
+				type: 'text/css',
 				rel: 'stylesheet',
-				href: 'assets/css/dark.css'
+				href: 'assets/css/dark.css?v=' + themeVersion
 			});
 		}
 		else {
 			$('#theme').empty().append("<i class='fa-regular fa-lightbulb'></i>");
 
 			localStorage.theme = "light"
-			
-			$("link[href='assets/css/dark.css']").remove();
+
+			$("link[href^='assets/css/dark.css']").remove();
 			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
+				type: 'text/css',
 				rel: 'stylesheet',
-				href: 'assets/css/light.css'
+				href: 'assets/css/light.css?v=' + themeVersion
 			});
 		}
 	})

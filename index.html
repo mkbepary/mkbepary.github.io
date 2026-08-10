@@ -1,648 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-
-		<!-- Meta tags -->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Md Kawser Bepary's portfolio covering hardware security, secure SoC and ASIC design, RTL and formal verification, static security checking, EDA automation, side-channel analysis, research projects, and publications.">
+		<meta name="keywords" content="Md Kawser Bepary, Kawser Bepary, MK Bepary, hardware security, hardware design, secure SoC architecture, security architect, ASIC verification, RTL verification, formal verification, SVA, JasperGold, static RTL security checking, EDA automation, LLM workflow, side-channel analysis, EM analysis, PMU side-channel, embedded systems, VLSI design">
+		<meta name="google-site-verification" content="5hVqyTxRLfMk7n_eLsFhk33iQihnKsjdVl81X5rcn3Y">
+		<meta name="author" content="Md Kawser Bepary">
+		<meta name="copyright" content="Work protected by copyright; no distribution without permission.">
+		<meta name="robots" content="index,follow">
 
-		<meta name="description" content="Md Kawser Bepary's website, biography, education, previous experience and published papers."/>
-		<meta name="keywords" content="Md Kawser Bepary, Kawser Bepary, MK Bepary, MKBepary, M.K. Bepary, mkbepary uf, mdkawser.bepary, mdkawser.bepary@ufl.edu, Md Kawser Bepary Github, Md Kawser Bepary UF, Md Kawser Bepary FICS, Md Kawser Bepary BUET, Md Kawser Bepary UAH, Md Kawser Bepary Linkedin, Md Kawser Bepary Google Scholar, Md Kawser Bepary Portfolio, Md Kawser Bepary Website, Md Kawser Bepary Hardware Security, PhD student Florida, University of Florida ECE, hardware security researcher, digital design, side-channel analysis, RTL verification, EM analysis, PMU side-channel, embedded systems, SoC security, VLSI design, ASIC verification, FPGA security, cyber-physical systems, secure hardware design, microelectronic security"/>
-
-		<meta name="google-site-verification" content="5hVqyTxRLfMk7n_eLsFhk33iQihnKsjdVl81X5rcn3Y" />
-		
-		<meta name="author" content="Md Kawser Bepary" />
-		<meta name="copyright" content="Work protected by copyright; no distribution without permission." />
-		
-		<!-- Title + Icon -->
 		<title>Md Kawser Bepary</title>
 		<link rel="icon" href="assets/documents/imgs/favicon.ico" type="image/x-icon">
 
-		<!-- Improve SEO -->
-		<meta name="robots" content="index,follow" />
-
-		<!-- Styles -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-		<link rel="stylesheet" href="assets/css/main.css?v=layout-2">
-
-
+		<link rel="stylesheet" href="assets/css/main.css?v=revamp-1">
 	</head>
 
-	<!-- Google tag (gtag.js) & Google Analytics -->
 	<script>
-        fetch('./assets/js/config.json')
-            .then(response => response.json())
-            .then(config => {
-                const scriptTag = document.createElement('script');
-                scriptTag.async = true;
-                scriptTag.src = `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsMeasurementId}`;
-                document.head.appendChild(scriptTag);
+		fetch('./assets/js/config.json')
+			.then(response => response.json())
+			.then(config => {
+				const scriptTag = document.createElement('script');
+				scriptTag.async = true;
+				scriptTag.src = `https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsMeasurementId}`;
+				document.head.appendChild(scriptTag);
 
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', config.googleAnalyticsMeasurementId);
-            })
-            .catch(error => console.error('Error loading the configuration:', error));
-    </script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', config.googleAnalyticsMeasurementId);
+			})
+			.catch(error => console.error('Error loading the configuration:', error));
+	</script>
 
 	<body>
-
-		<!-- Bottom rounded button -->
 		<div class="options-button" id="options-toggler"><i class="fa-solid fa-arrows-rotate"></i></div>
 		<div class="options-button" id="theme"><i class="fa-regular fa-lightbulb"></i></div>
-		<!-- <div class="options-button" id="lan"><img class="lang-flag" src="https://flagcdn.com/w20/us.png" alt="Flag indicating the english language is selected"></div> -->
 
-		<!-- Navbar -->
 		<nav id="top-nav" class="navbar navbar-expand-md navbar-light bg-light flex-md-nowrap flex-wrap">
 			<div class="container justify-content-center">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3" aria-controls="collapsingNavbar3" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="navbar-collapse collapse flex-grow-1 justify-content-center" id="collapsingNavbar3">
 					<ul class="navbar-nav mx-auto" id="navbarList">
-						<li class="nav-item">
-							<a class="nav-link active" id="aboutme" href="#" data-en="Home">Home</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" id="experience" href="#" data-en="Skills and Experience">Skills and Experience</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="projects" href="#" data-en="Research Projects">Research Projects</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="publications" href="#" data-en="Publications">Publications</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" id="resources" href="#" data-en="Resources">Resources</a>
-						</li>
-
-						<!-- Example using Photos -->
-						<!-- <li class="nav-item">
-							<a class="nav-link" id="photos" href="#" data-en="Photos">Photos</a>
-						</li> -->
+						<li class="nav-item"><a class="nav-link active" id="aboutme" href="#" data-en="Home">Home</a></li>
+						<li class="nav-item"><a class="nav-link" id="experience" href="#" data-en="Profile">Profile</a></li>
+						<li class="nav-item"><a class="nav-link" id="projects" href="#" data-en="Research">Research</a></li>
+						<li class="nav-item"><a class="nav-link" id="publications" href="#" data-en="Publications">Publications</a></li>
+						<li class="nav-item"><a class="nav-link" id="resources" href="#" data-en="Resources">Resources</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-
 		<div class="container" id="main-content">
 			<div class="row content" id="section-content">
-				
-				<!-- Md Kawser Bepary profile and contact info -->
-				<div id="leftPanel" class="col-md-3">
+				<aside id="leftPanel" class="col-md-3">
 					<div class="row mb-3">
 						<div class="col">
 							<img src="assets/documents/imgs/mkbepary_dp.png" class="rounded me-auto d-block img-fluid profilepicture" alt="Md Kawser Bepary profile picture">
 						</div>
 					</div>
-				
+
 					<h3 class="mb-2">Md Kawser Bepary</h3>
-				
-					
-					<p class="mb-4 text-lg leading-relaxed">
-					<strong>Senior R&D Engineer</strong> at 
-						<a href="https://caspiatechnologies.com" class="link-dark font-semibold" target="_blank">
-							Caspia Technologies</a><br> 
-						<strong> Hardware Security | Secure SoC Design | ASIC Design & Verification </strong><br>
-						
+					<p class="profile-tagline">Hardware security with RTL design, verification, formal methods, and secure SoC architecture.</p>
+					<p class="mb-4 profile-summary">
+						<strong>Senior R&amp;D Engineer</strong> at
+						<a href="https://caspiatechnologies.com" class="link-dark font-semibold" target="_blank">Caspia Technologies</a><br>
+						Hardware Security | RTL/Formal Verification | Secure Architecture<br>
 						<strong>Ph.D. in ECE</strong>, University of Florida, USA
 					</p>
-					
-			
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="https://maps.google.com/?q=Gainesville, Florida, USA" class="link-dark">Gainesville, Florida, USA</a>
-						</div>
-					</div>
-					
-				
-				
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fas fa-envelope" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="mailto:mdkawser.bepary@ufl.edu" class="link-dark">mdkawser.bepary@ufl.edu</a>
-						</div>
-					</div>
-				
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="https://www.linkedin.com/in/md-kawser-bepary" class="link-dark" target="_blank">LinkedIn</a>
-						</div>
-					</div>
-				
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="ai ai-google-scholar" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="https://scholar.google.com/citations?user=XHv1OXYAAAAJ&hl=en" class="link-dark" target="_blank">Google Scholar</a>
-						</div>
-					</div>
-				
-					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fa-brands fa-github" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="https://github.com/mkbepary" class="link-dark" target="_blank">GitHub</a>
-						</div>
-					</div>
 
 					<div class="row mb-2">
-						<div class="col-1">
-							<i class="fas fa-file" aria-hidden="true"></i>
-						</div>
-				
-						<div class="col-10">
-							<a href="assets/documents/resume_mkbepary.pdf" class="link-dark" target="_blank">Resume [Updated April 2025]</a>
-						</div>
+						<div class="col-1"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="https://maps.google.com/?q=Gainesville, Florida, USA" class="link-dark">Gainesville, Florida, USA</a></div>
 					</div>
-				</div>
-
-				<div id="rightPanel" class="col-md-8 offset-md-1 mb-5">
-				<!-- About Me -->
-				<div class="section-panel active" id="aboutmeContent">
-					<div class="content-inner">
-
-
-						<div class="row language">
-							
-							<p class="mt-2 justify">
-								Welcome to my homepage! <br><br>
-						
-								I am a <strong>Senior R&D Engineer at Caspia Technologies</strong> and a recent Ph.D. graduate (2025) from the University of Florida, specializing in secure <strong>System-on-Chip (SoC) design</strong> and <strong>hardware security verification</strong>. My academic research focused on developing novel <strong>pre-silicon methodologies</strong> for the detection and mitigation of <strong>physical side-channel vulnerabilities</strong> (power, EM, and microarchitectural timing). This foundation is complemented by hands-on expertise in <strong>RTL design</strong>, <strong>lightweight cryptography</strong>, and <strong>FPGA implementation</strong>, cultivated through DARPA-funded projects and collaborations with Synopsys Inc. <br><br>
-						
-								In my current role at Caspia, I am dedicated to transforming the <strong>silicon development lifecycle</strong> by leading efforts to scale and simplify robust security adoption. This involves leveraging <strong>GenAI technology</strong> to <strong>infuse expert-level security verification</strong> directly into existing EDA flows and the SoC framework. My mission is to ensure that advanced hardware security solutions are seamlessly integrated into the semiconductor design process, resulting in the development of secure, resilient, and trustworthy microelectronic systems.
-							</p>
-						</div>
-							
-
-						<h4 id="researchinterestsH4" class="mt-2">
-							Research Interests
-						</h4>
-						
-						<div class="mt-2">
-							<div><i class="fa-solid fa-shield"></i> Hardware Security and Trust</div>
-							<div><i class="fa-solid fa-microchip"></i> Secure System-on-Chip (SoC) Design</div>
-							<div><i class="fa-solid fa-chart-line"></i> Side-Channel Analysis</div>
-							<div><i class="fa-solid fa-check"></i> Microelectronic Security Verification</div>
-							<div><i class="fa-solid fa-cog"></i> Embedded System Application</div>
-							<div><i class="fa-solid fa-brain"></i> Machine Learning</div>
-						</div>
-
-
-						<!-- Education Section -->
-						<h4 id="educationH4" class="mt-4">Education</h4>
-
-						<!-- Ph.D. in Electrical and Computer Engineering -->
-						<div class="mt-4">
-							<h5>Ph.D. in Electrical and Computer Engineering</h5>
-							<h6><a href="https://www.ufl.edu" target="_blank" class="link-dark">University of Florida</a></h6>
-							<div class="trnsf-thin">Jan 2021 - Aug 2025</div>
-							<p class="mt-1 justify">
-								Focusing on <strong>hardware security</strong> and <strong>side-channel leakage assessment</strong>, my doctoral research explores secure design and verification of System-on-Chip (SoC) architectures. Under the mentorship of 
-								<a href="https://tehranipoor.ece.ufl.edu" target="_blank" class="link-dark">Prof. Mark Tehranipoor</a>, I am developing pre-silicon analysis frameworks to enhance the security of cryptographic hardware.
-							</p>
-							<!-- <div class="trnsf-thin"><span>Dissertation:</span> <span class="trnsf-italic">To be determined (expected 2025)</span></div> -->
-						</div>
-
-						<!-- M.Sc. in Computer Engineering -->
-						<div class="mt-4">
-							<h5>M.Sc. in Computer Engineering</h5>
-							<h6><a href="https://www.uah.edu" target="_blank" class="link-dark">The University of Alabama in Huntsville</a></h6>
-							<div class="trnsf-thin">Aug 2019 - Dec 2020</div>
-							<p class="mt-1 justify">
-								Specialized in <strong>digital design</strong>, <strong>computer architecture</strong> and <strong>embedded systems</strong>. My thesis, supervised by 
-								<a href="https://serlop.fiu.edu/" target="_blank" class="link-dark">Prof. M. Tauhidur Rahman</a>, investigated the reliability and security of DRAM modules, focusing on retention errors and bit-flip analysis under accelerated aging.
-							</p>
-						</div>
-
-							<!-- B.Sc. in Electrical and Electronic Engineering -->
-							<div class="mt-4">
-								<h5>B.Sc. in Electrical and Electronic Engineering</h5>
-								<h6><a href="https://eee.buet.ac.bd/" target="_blank" class="link-dark">Bangladesh University of Engineering and Technology (BUET)</a></h6>
-								<div class="trnsf-thin">Jul 2014 - Oct 2018</div>
-								<p class="mt-1 justify">
-									Developed a solid foundation in electronics, VLSI and digital design, with early exposure to embedded applications and hardware security challenges.
-								</p>
-							</div>
-
-							
-
-						</div>
-
-	
+					<div class="row mb-2">
+						<div class="col-1"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="mailto:mkbepary.buet13@gmail.com" class="link-dark">mkbepary.buet13@gmail.com</a></div>
 					</div>
+					<div class="row mb-2">
+						<div class="col-1"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="https://www.linkedin.com/in/md-kawser-bepary" class="link-dark" target="_blank">LinkedIn</a></div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-1"><i class="ai ai-google-scholar" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="https://scholar.google.com/citations?user=XHv1OXYAAAAJ&hl=en" class="link-dark" target="_blank">Google Scholar</a></div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-1"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="https://github.com/mkbepary" class="link-dark" target="_blank">GitHub</a></div>
+					</div>
+					<div class="row mb-2">
+						<div class="col-1"><i class="fas fa-file" aria-hidden="true"></i></div>
+						<div class="col-10"><a href="assets/documents/resume_mkbepary_202607.pdf" class="link-dark" target="_blank">Resume [Updated July 2026]</a></div>
+					</div>
+				</aside>
 
-				<!-- Experience -->
-					<div class="section-panel" id="experienceContent">
-					<div class="content-inner">
-
-						<h4 id="technicalSkillsH4" class="mt-4">
-							Technical Skills
-						</h4>
-						
-
-						<div class="p-3 rounded">
-							<div class="row">
-								<div class="col-md-6 mb-2">
-									<strong><i class="fas fa-code"></i> Programming Languages</strong><br>
-									<span>Python, C/C++, Rust, MATLAB, RISC-V/MIPS/8086 Assembly</span>
-								</div>
-								
-								<div class="col-md-6 mb-2">
-									<strong><i class="fas fa-microchip"></i> Hardware Description Languages</strong><br>
-									<span>Verilog, VHDL, SystemVerilog</span>
-								</div>
-						
-								<div class="col-md-12 mb-2">
-									<strong><i class="fas fa-tools"></i> Electronic Design Automation (EDA) Tools</strong>
-									<ul class="list-unstyled ms-3">
-										<li><strong><i class="fas fa-cogs"></i> RTL Design and Synthesis:</strong> Synopsys Design Compiler, Cadence Genus, ABC, Xilinx Vivado</li>
-										<li><strong><i class="fas fa-check-circle"></i> Functional Verification:</strong> Synopsys VCS, iVerilog, SystemVerilog Assertion, UVM</li>
-										<li><strong><i class="fas fa-shield-alt"></i> Formal Verification:</strong> Incisive Formal Verifier, Cadence JasperGold, Synopsys Formality</li>
-										<li><strong><i class="fas fa-drafting-compass"></i> Physical Design:</strong> Cadence Innovus, Synopsys ICC2</li>
-										<li><strong><i class="fas fa-tools"></i> Other Tools:</strong> Synopsys PrimeTime, TetraMax, StarRC</li>
-									</ul>
-								</div>
-						
-								<div class="col-md-6 mb-2">
-									<strong><i class="fas fa-terminal"></i> Scripting Languages</strong><br>
-									<span>Make, CMake, Tcl/Tk, Unix Shell, Bash</span>
-								</div>
-						
-								<div class="col-md-6 mb-2">
-									<strong><i class="fas fa-chart-line"></i> Data Analysis & Machine Learning</strong><br>
-									<span>Numpy, SciPy, Pandas, Scikit-learn, TensorFlow, Keras</span>
-								</div>
-						
-								<div class="col-md-12">
-									<strong><i class="fas fa-laptop-code"></i> Additional Tools</strong><br>
-									<span>Synopsys HSpice, Proteus, gem5, multi2sim, Linux, Git, LaTeX, Minitab</span>
+				<main id="rightPanel" class="col-md-8 offset-md-1 mb-5">
+					<section class="section-panel active" id="aboutmeContent">
+						<div class="content-inner">
+							<div class="hero-summary">
+								<p class="eyebrow">Hardware security | RTL and formal verification | EDA automation</p>
+								<h1 class="hero-title">Hardware security engineer building practical verification flows for secure silicon</h1>
+								<p class="hero-subtitle">I work across secure SoC and ASIC design, static RTL security checking, formal verification, and side-channel analysis to help identify security risks early in the silicon development flow.</p>
+								<div class="hero-copy">
+									<p>I am a Senior R&amp;D Engineer at <a href="https://caspiatechnologies.com" class="link-dark" target="_blank">Caspia Technologies</a> and recently completed a Ph.D. in Electrical and Computer Engineering at the University of Florida.</p>
+									<p>My recent work turns hardware security research into production-oriented workflows for RTL analysis, automated re-verification, mitigation guidance, formal-property generation, and pre-silicon leakage assessment.</p>
 								</div>
 							</div>
-						</div>
-						
-						
-						<!-- FICS Research, University of Florida -->
-						<div class="row mt-3">
-							<h2>Graduate Research Assistant</h2>
-							<div class="trnsf-thin">
-								<a href="https://fics.institute.ufl.edu/" target="_blank" class="link-dark">Florida Institute for Cybersecurity Research</a>, 
-								<a href="https://www.ufl.edu/" target="_blank" class="link-dark">University of Florida</a>, Jan 2021 - Current
+
+							<div class="highlight-grid" aria-label="Research and engineering focus areas">
+								<div class="highlight-card">
+									<i class="fa-solid fa-microchip" aria-hidden="true"></i>
+									<h3>Hardware Design and Architecture</h3>
+									<p>Security-aware RTL, SoC integration, and architecture decisions for modern silicon systems.</p>
+								</div>
+								<div class="highlight-card">
+									<i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+									<h3>RTL and Formal Verification</h3>
+									<p>Assertion-based, simulation, static-analysis, and formal workflows applied to security properties.</p>
+								</div>
+								<div class="highlight-card">
+									<i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+									<h3>Side-Channel Analysis</h3>
+									<p>Power, EM, cache, and PMU leakage assessment before and after implementation.</p>
+								</div>
+								<div class="highlight-card">
+									<i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+									<h3>EDA Automation and AI-Assisted Flows</h3>
+									<p>Security workflows that combine tool orchestration, analysis, mitigation, and re-verification.</p>
+								</div>
 							</div>
 
-							<p class="mt-1 justify">
-								• Developing a GNN-based power and EM side-channel leakage modeling framework at the pre-silicon stage to enhance the security of cryptographic designs against physical attacks.<br>
-								• Designing an EM-based side-channel disassembler to reconstruct executed instructions in microcontrollers, contributing to secure embedded systems analysis.<br>
-								• Developed a novel PMU-based approach for detecting CPU workloads and mitigating cache side-channel vulnerabilities to counter speculative execution attacks.<br>
-								• Implemented an automated CAD toolflow to assess physical-design-aware EM side-channel vulnerability at the gate level, in support of the <a href="https://cyan.engineering.osu.edu/thrust-2" target="_blank" class="link-dark">CYAN Research Program</a>, enabling rapid pre-silicon security sign-off.<br>
-								• Built a Python-based framework to estimate IP and SoC-level resilience against power side-channel threats at the RTL level as part of a <a href="https://www.darpa.mil/program/automatic-implementation-of-secure-silicon" target="_blank" class="link-dark">DARPA AISS</a> project in collaboration with <a href="https://www.synopsys.com/" target="_blank" class="link-dark">Synopsys</a>.
-								• Designed security primitive IPs in RTL for device lifecycle management as part of the DARPA AISS project in collaboration with Synopsys.
-							</p>
+							<section class="section-block">
+								<div class="section-heading-row">
+									<h2>Current Focus</h2>
+									<span class="section-note">Security verification across RTL, architecture, and implementation flows</span>
+								</div>
+								<p class="section-intro">Modern SoCs combine complex RTL, third-party IP, embedded firmware, and aggressive implementation flows. My work focuses on bringing security analysis into the design and verification process earlier, using static RTL checking, formal-verification support, EDA automation, and side-channel-aware assessment methods.</p>
+								<div class="focus-list">
+									<div class="focus-item"><span>At Caspia</span><p>Developing CODAx-centered workflows for RTL security analysis, agentic post-analysis, automated mitigation, risk scoring, and SVx/formal-property support.</p></div>
+									<div class="focus-item"><span>Research direction</span><p>Building methods for pre-silicon side-channel assessment, including RTL/gate-level power and EM leakage modeling, PMU-based profiling, and secure silicon assurance.</p></div>
+									<div class="focus-item"><span>Design foundation</span><p>Hands-on experience with SoC design, SVA/JasperGold formal checks, synthesis, FPGA implementation, test infrastructure, and EDA toolflow automation.</p></div>
+								</div>
+							</section>
+
+							<section class="section-block">
+								<div class="section-heading-row">
+									<h2>Updates</h2>
+									<span class="section-note">Selected research, career, and publication milestones</span>
+								</div>
+								<div class="updates-list">
+									<div class="update-item"><span class="update-date">2026</span><p>Co-authored PFx, an agentic framework for automated system-level dynamic security verification, listed for GOMACTech 2026.</p></div>
+									<div class="update-item"><span class="update-date">Sep 2025</span><p>Joined <a href="https://caspiatechnologies.com" class="link-dark" target="_blank">Caspia Technologies</a> as a Senior R&amp;D Engineer, working on agentic RTL security verification, static analysis, mitigation, and formal-property generation flows.</p></div>
+									<div class="update-item"><span class="update-date">2025</span><p>Published <a href="https://doi.org/10.1007/s41635-025-00161-1" class="link-dark" target="_blank">gate-level electromagnetic side-channel leakage modeling and vulnerability assessment</a> work in the <em>Journal of Hardware and Systems Security</em>.</p></div>
+									<div class="update-item"><span class="update-date">Aug 2025</span><p>Completed the Ph.D. in Electrical and Computer Engineering at the University of Florida, with research centered on pre-silicon side-channel assessment and secure SoC design.</p></div>
+									<div class="update-item"><span class="update-date">2025</span><p>Released <a href="https://eprint.iacr.org/2025/014" class="link-dark" target="_blank">SPY-PMU</a>, a Cryptology ePrint report on performance-counter side-channel profiling for remote user activity leakage.</p></div>
+									<div class="update-item"><span class="update-date">2024</span><p>Published <a href="https://doi.org/10.3390/chips3040016" class="link-dark" target="_blank">PreSCAN</a>, a review of pre-silicon physical side-channel vulnerability assessment methods.</p></div>
+									<div class="update-item"><span class="update-date">2023</span><p>Contributed to secure silicon research under the DARPA AISS program, including RTL-level assessment and security primitive work.</p></div>
+									<div class="update-item"><span class="update-date">2023</span><p>Presented gate-level electromagnetic side-channel modeling work at GOMACTech and related hardware security venues.</p></div>
+									<div class="update-item"><span class="update-date">2023</span><p>Completed a Graduate Technical Internship at <a href="https://www.synopsys.com/" class="link-dark" target="_blank">Synopsys</a>, building secure embedded applications around boot, TLS, and cryptographic services.</p></div>
+									<div class="update-item"><span class="update-date">2022</span><p>Published DRAM retention behavior research in <em>Applied Sciences</em> and won 1st place in the IEEE HOST Microelectronics Security Challenge.</p></div>
+								</div>
+							</section>
 						</div>
+					</section>
 
+					<section class="section-panel" id="experienceContent">
+						<div class="content-inner">
+							<section class="section-block">
+								<p class="eyebrow">Profile</p>
+								<h2>Professional Focus</h2>
+								<p class="section-intro">My work spans hardware security research, RTL and ASIC verification, secure architecture, static security checking, and automated workflows for assessing and reducing design risk before silicon.</p>
+								<div class="expertise-grid">
+									<div class="expertise-card"><h3>Hardware design and verification</h3><p>RTL, assertion-driven checks, simulation, and implementation-aware validation for SoC and IP blocks.</p></div>
+									<div class="expertise-card"><h3>Formal and security verification</h3><p>Security properties, asset identification, SVA-based checks, and formal tool flows for early risk discovery.</p></div>
+									<div class="expertise-card"><h3>Security architecture</h3><p>Secure SoC primitives, threat-aware design choices, and architecture-level reasoning about roots of trust and leakage surfaces.</p></div>
+									<div class="expertise-card"><h3>Side-channel assessment</h3><p>Power, EM, cache, and PMU leakage modeling and analysis.</p></div>
+									<div class="expertise-card"><h3>Secure embedded systems</h3><p>Secure boot, TLS, lightweight cryptography, firmware security, security IP, and FPGA prototyping.</p></div>
+									<div class="expertise-card"><h3>EDA automation and AI-assisted flows</h3><p>Agentic orchestration, rule refinement, risk scoring, mitigation guidance, and re-verification loops for RTL security analysis.</p></div>
+								</div>
+							</section>
 
+							<section class="section-block">
+								<h2>Experience</h2>
+								<div class="timeline-list">
+									<div class="timeline-item"><h3>Senior R&amp;D Engineer</h3><p class="meta"><a href="https://caspiatechnologies.com" target="_blank" class="link-dark">Caspia Technologies</a> | Sep 2025 - Present</p><ul><li>Designed and developed an end-to-end agentic security verification flow around CODAx, a static RTL security tool for pre-silicon verification of complex SoC designs.</li><li>Performed R&amp;D and QA for CODAx by refining security and fault-oriented rules, reducing noise, and improving coverage of critical design weaknesses.</li><li>Built an agentic post-analysis workflow for autonomous re-verification of violations, risk scoring, and RTL or architectural mitigation recommendations.</li><li>Developed automated RTL mitigation generation to support iterative repair and re-verification inside the security analysis loop.</li><li>Designed an LLM-based flow to identify security-critical RTL assets and support formal property generation and security verification in SVx.</li></ul></div>
+									<div class="timeline-item"><h3>Graduate Technical Intern, Security IP Team</h3><p class="meta"><a href="https://www.synopsys.com/" target="_blank" class="link-dark">Synopsys Inc.</a> | May 2023 - Dec 2023</p><ul><li>Developed embedded applications for secure boot, TLS communication, and cryptographic services under the DARPA AISS project.</li><li>Implemented ASCON authenticated encryption and hashing for resource-constrained, RTOS-based platforms.</li><li>Integrated an ASCON hardware module into a Synopsys security engine subsystem and implemented masking to improve side-channel resiliency.</li></ul></div>
+									<div class="timeline-item"><h3>Graduate Research Assistant</h3><p class="meta"><a href="https://fics.institute.ufl.edu/" target="_blank" class="link-dark">FICS Research, Department of ECE, University of Florida</a> | Jan 2021 - Aug 2025</p><ul><li>Built a Python-based RTL framework to estimate IP/SoC power side-channel resiliency for a DARPA-funded AISS project in collaboration with Synopsys.</li><li>Implemented an automated CAD toolflow for physical-design-aware EM side-channel vulnerability assessment at gate level.</li><li>Developed machine-learning based pre-silicon leakage modeling for cryptographic designs.</li><li>Created EM-based instruction-disassembly and PMU-based workload-profiling techniques for embedded and microarchitectural security analysis.</li></ul></div>
+									<div class="timeline-item"><h3>Graduate Teaching Assistant, Intro to Hardware Security and Trust</h3><p class="meta">Department of ECE, University of Florida | Aug 2022 - Dec 2022</p><ul><li>Designed hands-on labs and tutorials using industry-standard EDA tools for VLSI synthesis, functional verification, and hardware security analysis.</li><li>Managed grading, projects, and exams while mentoring students on hardware security and verification methodologies.</li></ul></div>
+									<div class="timeline-item"><h3>Graduate Research Assistant</h3><p class="meta">Department of ECE, The University of Alabama in Huntsville | Aug 2019 - Dec 2020</p><ul><li>Developed C++ based FPGA test infrastructure to interface with commercial DDR3 DRAM chips and run configurable read/write experiments.</li><li>Conducted stress testing and soft-error analysis to evaluate memory security vulnerabilities and reliability degradation under voltage, temperature, and aging stress conditions.</li></ul></div>
+									<div class="timeline-item"><h3>Graduate Teaching Assistant, Computer Organization and Architecture</h3><p class="meta">Department of ECE, The University of Alabama in Huntsville | Aug 2020 - Dec 2020</p><ul><li>Supported graduate and undergraduate students with grading, projects, and exams covering computer organization, architecture, memory hierarchy, assembly language, and MIPS ISA concepts.</li></ul></div>
+								</div>
+							</section>
 
-								<!-- Synopsys Inc. -->
-						<div class="row mt-3">
-							<h2>Graduate Technical Intern</h2>
-							<div class="trnsf-thin">
-								Security IP Team, Solutions Group, <a href="https://www.synopsys.com/" target="_blank" class="link-dark">Synopsys Inc.</a>, May 2023 - Dec 2023
-							</div>
+							<section class="section-block">
+								<h2>Education</h2>
+								<div class="timeline-list">
+									<div class="timeline-item">
+										<h3>Ph.D. in Electrical and Computer Engineering</h3>
+										<p class="meta"><a href="https://www.ufl.edu" target="_blank" class="link-dark">University of Florida</a> | Jan 2021 - Aug 2025</p>
+										<p>Focused on hardware security, side-channel leakage assessment, and secure SoC design under <a href="https://tehranipoor.ece.ufl.edu" target="_blank" class="link-dark">Prof. Mark Tehranipoor</a>.</p>
+									</div>
+									<div class="timeline-item">
+										<h3>M.Sc. in Computer Engineering</h3>
+										<p class="meta"><a href="https://www.uah.edu" target="_blank" class="link-dark">The University of Alabama in Huntsville</a> | Aug 2019 - Dec 2020</p>
+										<p>Worked on DRAM reliability and security, retention behavior, and FPGA-based memory characterization.</p>
+									</div>
+									<div class="timeline-item">
+										<h3>B.Sc. in Electrical and Electronic Engineering</h3>
+										<p class="meta"><a href="https://eee.buet.ac.bd/" target="_blank" class="link-dark">Bangladesh University of Engineering and Technology (BUET)</a> | Jul 2014 - Oct 2018</p>
+										<p>Built a foundation in electronics, VLSI, digital design, and embedded systems.</p>
+									</div>
+								</div>
+							</section>
 
-							<p class="mt-1 justify">
-								• Developed embedded applications for secure boot, TLS communication, and cryptographic services as part of the DARPA-funded AISS project.<br>
-								• Implemented ASCON lightweight cryptographic applications for embedded firmware encryption and authentication within a secure boot protocol.<br>
-								• Integrated ASCON authenticated encryption and hashing hardware modules into the Synopsys security engine subsystem, incorporating a masking scheme for side-channel resiliency.
-							</p>
+							<section class="section-block">
+								<h2>Technical Skills</h2>
+								<div class="skill-group"><h3>Hardware security and architecture</h3><div class="tag-list"><span class="tag">Side-channel assessment</span><span class="tag">Secure SoC design</span><span class="tag">Security architecture</span><span class="tag">Hardware security verification</span><span class="tag">Static RTL security checking</span><span class="tag">Cryptographic hardware</span><span class="tag">Threat modeling</span></div></div>
+								<div class="skill-group"><h3>RTL design and verification</h3><div class="tag-list"><span class="tag">Verilog</span><span class="tag">VHDL</span><span class="tag">SystemVerilog</span><span class="tag">SVA</span><span class="tag">UVM</span><span class="tag">ModelSim</span><span class="tag">VCS</span><span class="tag">SimVision</span><span class="tag">FPGA</span><span class="tag">Testbench development</span></div></div>
+								<div class="skill-group"><h3>Formal verification and EDA</h3><div class="tag-list"><span class="tag">Formal verification</span><span class="tag">Assertion-based verification</span><span class="tag">JasperGold</span><span class="tag">Synopsys Formality</span><span class="tag">Synopsys DC</span><span class="tag">Cadence Genus</span><span class="tag">Cadence Innovus</span><span class="tag">Synopsys ICC2</span><span class="tag">PrimeTime</span><span class="tag">TetraMax</span><span class="tag">StarRC</span><span class="tag">Vivado</span><span class="tag">gem5</span></div></div>
+								<div class="skill-group"><h3>Programming, data, and automation</h3><div class="tag-list"><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">Rust</span><span class="tag">MATLAB</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">PyTorch</span><span class="tag">LLM API integration</span><span class="tag">Agentic workflows</span><span class="tag">Bash</span><span class="tag">Tcl</span><span class="tag">Make</span><span class="tag">CMake</span><span class="tag">Git</span></div></div>
+								<div class="skill-group"><h3>Embedded and architecture</h3><div class="tag-list"><span class="tag">RISC-V</span><span class="tag">MIPS</span><span class="tag">Secure boot</span><span class="tag">TLS</span><span class="tag">ASCON</span><span class="tag">Security IP</span><span class="tag">Microcontrollers</span><span class="tag">PAPI</span></div></div>
+							</section>
 						</div>
+					</section>
 
-						<!-- Teaching Assistant at University of Florida -->
-						<div class="row mt-3">
-							<h2>Graduate Teaching Assistant</h2>
-							<div class="trnsf-thin">
-								<a href="https://www.ece.ufl.edu/" target="_blank" class="link-dark">Department of Electrical and Computer Engineering</a>, 
-								<a href="https://www.ufl.edu/" target="_blank" class="link-dark">University of Florida</a>, Aug 2022 - Dec 2022
-							</div>
+					<section class="section-panel" id="projectsContent">
+						<div class="content-inner">
+							<section class="section-block">
+								<p class="eyebrow">Research</p>
+								<h2>Selected Work</h2>
+								<p class="section-intro">These projects connect hardware security research with concrete design, verification, formal reasoning, measurement, modeling, and ASIC/EDA workflows.</p>
+								<div class="project-grid">
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/em-disassembler.svg" alt="Electromagnetic emissions processed to reconstruct executed instructions"><figcaption>Recovering instruction-level activity from EM emissions.</figcaption></figure><div class="project-body"><h3>EM-Based Side-Channel Disassembler</h3><p>Explored EM-based methods for reconstructing executed instructions from microcontrollers to support firmware verification and anomaly detection.</p><div class="tag-list"><span class="tag">EM traces</span><span class="tag">Firmware</span><span class="tag">Security validation</span><span class="tag">Disassembly</span></div><p class="project-outcome">Outcome: ongoing research direction connecting side-channel sensing with embedded security analysis.</p></div></article>
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/pmu-profiling.svg" alt="Performance counters collected and classified to infer workload activity"><figcaption>Performance-counter traces used for workload activity profiling.</figcaption></figure><div class="project-body"><h3>PMU-Based Side-Channel Profiling</h3><p>Developed techniques that use performance monitoring units to infer workload behavior and expose microarchitectural leakage risks.</p><div class="tag-list"><span class="tag">PMU</span><span class="tag">Cache</span><span class="tag">Architecture</span><span class="tag">Profiling</span></div><p class="project-outcome">Outcome: released SPY-PMU through Cryptology ePrint.</p><div class="link-row"><a class="link-button" href="https://eprint.iacr.org/2025/014" target="_blank">ePrint</a></div></div></article>
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/secure-embedded.svg" alt="Firmware image moving through cryptographic services and secure boot authentication"><figcaption>Secure boot and cryptographic services for embedded systems.</figcaption></figure><div class="project-body"><h3>Secure Embedded Applications</h3><p>Built secure boot, TLS, and cryptographic service applications during a Synopsys internship, including lightweight ASCON integration.</p><div class="tag-list"><span class="tag">Secure boot</span><span class="tag">Security IP</span><span class="tag">ASCON</span><span class="tag">Embedded</span></div><p class="project-outcome">Outcome: contributed embedded security applications for secure IP workflows.</p><div class="link-row"><a class="link-button" href="https://www.synopsys.com/" target="_blank">Synopsys</a></div></div></article>
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/em-side-channel.svg" alt="Gate-level design emitting electromagnetic leakage that is modeled before silicon"><figcaption>Physical-design-aware EM leakage modeling before silicon.</figcaption></figure><div class="project-body"><h3>CYAN / EM Side-Channel Assessment</h3><p>Implemented an automated CAD flow to evaluate electromagnetic side-channel leakage at gate level with physical-design context.</p><div class="tag-list"><span class="tag">CYAN</span><span class="tag">EM leakage</span><span class="tag">Gate-level</span><span class="tag">EDA flow</span></div><p class="project-outcome">Outcome: presented at GOMACTech and extended toward ML-assisted leakage modeling.</p><div class="link-row"><a class="link-button" href="https://cyan.engineering.osu.edu/" target="_blank">Program</a><a class="link-button" href="https://github.com/mkbepary/emsca_presilicon" target="_blank">GitHub</a><a class="link-button" href="https://www.researchgate.net/publication/369890652_EMSC-GL_Security_Assessment_and_Modeling_of_Electromagnetic_Side-channel_Leakage_at_Gate-level" target="_blank">Poster</a></div></div></article>
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/aiss-flow.svg" alt="Secure silicon workflow from RTL IP to security assessment and secure SoC primitives"><figcaption>Security assessment and primitive integration for secure silicon workflows.</figcaption></figure><div class="project-body"><h3>Automatic Implementation of Secure Silicon</h3><p>Developed RTL-level assessment methods and security primitive concepts for improving IP and SoC resilience against side-channel threats.</p><div class="tag-list"><span class="tag">DARPA AISS</span><span class="tag">RTL</span><span class="tag">Formal reasoning</span><span class="tag">Secure SoC</span></div><p class="project-outcome">Outcome: contributed to secure silicon research with Synopsys collaboration and published artifacts.</p><div class="link-row"><a class="link-button" href="https://www.darpa.mil/program/automatic-implementation-of-secure-silicon" target="_blank">Program</a><a class="link-button" href="https://eprint.iacr.org/2021/1654" target="_blank">ePrint</a><a class="link-button" href="https://ieeexplore.ieee.org/abstract/document/10130190" target="_blank">IEEE</a><a class="link-button" href="https://semiengineering.com/testing-chips-for-security/" target="_blank">Media</a></div></div></article>
+									<article class="project-card"><figure class="project-figure"><img src="assets/img/projects/dram-reliability.svg" alt="DRAM reliability testing workflow with FPGA control and retention analysis"><figcaption>FPGA-controlled DRAM stress and retention-error characterization.</figcaption></figure><div class="project-body"><h3>DRAM Reliability and Security Assessment</h3><p>Built a C++ testing framework for DDR3 DRAM on a Xilinx ML605 FPGA to study retention errors under stress and aging conditions.</p><div class="tag-list"><span class="tag">DRAM</span><span class="tag">FPGA</span><span class="tag">Hardware test</span><span class="tag">Reliability</span></div><p class="project-outcome">Outcome: published retention behavior analysis in <em>Applied Sciences</em>.</p><div class="link-row"><a class="link-button" href="https://doi.org/10.3390/app12094332" target="_blank">DOI</a></div></div></article>
+								</div>
+							</section>
 
-							<p class="mt-1 justify">
-								• Managed assignments, projects, and exams for "Intro to Hardware Security and Trust," helped develop tutorials on commercial EDA tools for VLSI design, synthesis, and functional and security verification.
-							</p>
+							<section class="section-block">
+								<h2>Selected Design and Verification Projects</h2>
+								<p class="section-intro">Additional project work that supports hardware design, RTL verification, formal verification, FPGA implementation, and secure architecture roles.</p>
+								<div class="publication-list compact">
+									<article class="publication-entry"><span class="pub-type">SoC Design</span><h3>MicroBlaze-Based System-on-Chip</h3><p>Built a MicroBlaze-based SoC with AXI/APB peripheral integration and bare-metal C applications for on-chip communication and control.</p><div class="tag-list"><span class="tag">SoC</span><span class="tag">AXI/APB</span><span class="tag">Bare-metal C</span><span class="tag">Vivado</span></div></article>
+									<article class="publication-entry"><span class="pub-type">Formal Verification</span><h3>Property-Based Security Verification of an RSA Controller</h3><p>Used SystemVerilog Assertions in Cadence JasperGold to verify functional and security properties of an RSA hardware module.</p><div class="tag-list"><span class="tag">SVA</span><span class="tag">JasperGold</span><span class="tag">Formal verification</span><span class="tag">Cryptographic hardware</span></div></article>
+									<article class="publication-entry"><span class="pub-type">FPGA Design</span><h3>Convolution and DRAM DMA on FPGA</h3><p>Implemented a 1-D time-domain convolution accelerator and DRAM DMA interface on a ZedBoard FPGA to improve throughput using parallelism.</p><div class="tag-list"><span class="tag">FPGA</span><span class="tag">DMA</span><span class="tag">Parallelism</span><span class="tag">DRAM</span></div></article>
+									<article class="publication-entry"><span class="pub-type">Crypto Design</span><h3>Efficient AES Crypto Engine</h3><p>Developed a pipelined VHDL implementation of AES-128 encryption/decryption on a Xilinx Artix-7 FPGA board.</p><div class="tag-list"><span class="tag">AES</span><span class="tag">VHDL</span><span class="tag">Pipelining</span><span class="tag">Artix-7</span></div></article>
+								</div>
+							</section>
 						</div>
+					</section>
 
+					<section class="section-panel" id="publicationsContent">
+						<div class="content-inner">
+							<section class="section-block">
+								<p class="eyebrow">Publications</p>
+								<h2>Selected Publications</h2>
+								<div class="publication-list">
+									<article class="publication-entry"><span class="pub-type">Workshop</span><h3>PFx: An Agentic Framework for Automated System-level Dynamic Security Verification</h3><p class="meta">HA Shaikh, <strong>MK Bepary</strong>, F Rahman, J Lee | Annual GOMACTech Workshop, 2026</p><p>Presents an agentic approach for automating system-level dynamic security verification workflows.</p></article>
+									<article class="publication-entry"><span class="pub-type">Journal</span><h3>Towards Efficient Gate-Level Electromagnetic Side-Channel Leakage Modeling and Vulnerability Assessment</h3><p class="meta"><strong>MK Bepary</strong>, T Zhang, J Zhou, F Rahman, F Farahmandi, M Tehranipoor | Journal of Hardware and Systems Security, 2025</p><p>Extends pre-silicon EM side-channel modeling toward efficient gate-level leakage assessment.</p><a class="link-button" href="https://doi.org/10.1007/s41635-025-00161-1" target="_blank">DOI</a></article>
+									<article class="publication-entry"><span class="pub-type">Preprint</span><h3>SPY-PMU: Side-Channel Profiling of Your Performance Monitoring Unit to Leak Remote User Activity</h3><p class="meta"><strong>MK Bepary</strong>, A Basu, S Mohammad, R Hassan, F Farahmandi, M Tehranipoor | Cryptology ePrint Archive, 2025</p><p>Shows how performance counters can expose workload activity through a side-channel profiling approach.</p><a class="link-button" href="https://eprint.iacr.org/2025/014" target="_blank">ePrint</a></article>
+									<article class="publication-entry"><span class="pub-type">Journal</span><h3>PreSCAN: A Comprehensive Review of Pre-Silicon Physical Side-Channel Vulnerability Assessment Methodologies</h3><p class="meta"><strong>MK Bepary</strong>, T Zhang, F Farahmandi, M Tehranipoor | Chips, 2024</p><p>Surveys pre-silicon methods for assessing physical side-channel vulnerabilities before fabrication.</p><a class="link-button" href="https://doi.org/10.3390/chips3040016" target="_blank">DOI</a></article>
+									<article class="publication-entry"><span class="pub-type">Conference</span><h3>Design and Security-Mitigation of Custom and Configurable Hardware Cryptosystems</h3><p class="meta">T Rahman, <strong>MK Bepary</strong>, MSUl Haque, M Tehranipoor, F Rahman | IEEE DCAS, 2023</p><p>Discusses security mitigation strategies for custom and configurable hardware cryptosystems.</p><a class="link-button" href="https://ieeexplore.ieee.org/abstract/document/10130190" target="_blank">IEEE</a></article>
+									<article class="publication-entry"><span class="pub-type">Workshop</span><h3>Security Assessment and Modeling of EM Side-channel Leakage at Gate-Level</h3><p class="meta"><strong>MK Bepary</strong>, F Rahman, F Farahmandi, M Tehranipoor | GOMACTech, 2023</p><p>Introduces gate-level EM side-channel assessment with physical-design-aware modeling.</p><a class="link-button" href="https://www.researchgate.net/publication/369890652_EMSC-GL_Security_Assessment_and_Modeling_of_Electromagnetic_Side-channel_Leakage_at_Gate-level" target="_blank">Poster</a></article>
+									<article class="publication-entry"><span class="pub-type">Preprint</span><h3>Quantifiable Assurance: From IPs to Platforms</h3><p class="meta">B Ahmed, <strong>MK Bepary</strong>, N Pundir, M Borza, et al. | Cryptology ePrint Archive, 2021</p><p>Explores assurance metrics and security assessment across IP and platform levels.</p><a class="link-button" href="https://eprint.iacr.org/2021/1654" target="_blank">ePrint</a></article>
+									<article class="publication-entry"><span class="pub-type">Journal</span><h3>DRAM Retention Behavior with Accelerated Aging in Commercial Chips</h3><p class="meta"><strong>MK Bepary</strong>, BMSB Talukder, MT Rahman | Applied Sciences, 2022</p><p>Characterizes retention behavior and reliability patterns in commercial DRAM chips under accelerated aging.</p><a class="link-button" href="https://www.mdpi.com/2076-3417/12/9/4332" target="_blank">MDPI</a></article>
+								</div>
+							</section>
 
-								<!-- Research Assistant at University of Alabama in Huntsville -->
-						<div class="row mt-3">
-							<h2>Graduate Research Assistant</h2>
-							<div class="trnsf-thin">
-								<a href="https://www.uah.edu/eng/departments/ece" target="_blank" class="link-dark">Department of Electrical and Computer Engineering</a>, 
-								<a href="https://www.uah.edu/" target="_blank" class="link-dark">The University of Alabama in Huntsville</a>, Aug 2019 - Dec 2020
-							</div>
+							<section class="section-block">
+								<h2>Book Chapters</h2>
+								<div class="publication-list compact">
+									<article class="publication-entry"><span class="pub-type">Book Chapter</span><h3>CAD for Power Side-Channel Detection</h3><p class="meta">In <em>CAD for Hardware Security</em>, Springer, 2023</p><a class="link-button" href="https://link.springer.com/chapter/10.1007/978-3-031-26896-0_6" target="_blank">Springer</a></article>
+									<article class="publication-entry"><span class="pub-type">Book Chapter</span><h3>Counterfeit and Recycled IC Detection</h3><p class="meta">In <em>Hardware Security Primitives</em>, Springer, 2022</p><a class="link-button" href="https://doi.org/10.1007/978-3-031-19185-5_16" target="_blank">DOI</a></article>
+								</div>
+							</section>
 
-							<p class="mt-1 justify">
-								• Developed open-source API-based C++ scripts to interface with commercial DDR3 DRAM chips on a Xilinx ML605 FPGA, enabling read/write operations with configurable timing parameters.<br>
-								• Analyzed device aging and retention error-induced bit-flips under stress conditions, exploring reliability and security issues while generating robust signatures.
-							</p>
+							<section class="section-block">
+								<h2>Posters and Honors</h2>
+								<div class="updates-list">
+									<div class="update-item"><span class="update-date">2023</span><p>Presented quantitative assessment of power side-channel vulnerability at Florida Semiconductor Week. <a href="https://github.com/mkbepary/pre-silicon_side-channel" target="_blank" class="link-dark">GitHub</a></p></div>
+									<div class="update-item"><span class="update-date">2022</span><p>Presented EM side-channel leakage modeling at Trusted and Assurance Microelectronics Forum. <a href="https://github.com/mkbepary/emsca_presilicon" target="_blank" class="link-dark">GitHub</a></p></div>
+									<div class="update-item"><span class="update-date">2022</span><p>Won 1st place in the IEEE HOST Microelectronics Security Challenge. <a href="https://github.com/mkbepary/host_ip_security_challenge" target="_blank" class="link-dark">GitHub</a></p></div>
+									<div class="update-item"><span class="update-date">2022</span><p>Awarded IEEE HOST Travel Grant.</p></div>
+								</div>
+							</section>
 						</div>
+					</section>
 
-
-
-						<!-- Teaching Assistant at University of Alabama in Huntsville -->
-						<div class="row mt-3">
-							<h2>Graduate Teaching Assistant</h2>
-							<div class="trnsf-thin">
-								<a href="https://www.uah.edu/eng/departments/ece" target="_blank" class="link-dark">Department of Electrical and Computer Engineering</a>, 
-								<a href="https://www.uah.edu/" target="_blank" class="link-dark">The University of Alabama in Huntsville</a>, Aug 2020 - Dec 2020
-							</div>
-
-							<p class="mt-1 justify">
-								• Assisted 100+ graduate and undergraduate students with grading, homework, quizzes, projects, and exams on computer organization, architecture, memory hierarchy, assembly language, and MIPS ISA.
-							</p>
+					<section class="section-panel" id="resourcesContent">
+						<div class="content-inner">
+							<section class="section-block">
+								<p class="eyebrow">Resources</p>
+								<h2>Useful Hardware Security, Verification, and VLSI Links</h2>
+								<p class="section-intro">A curated set of beginner-friendly and open resources for VLSI, RTL design, verification, formal methods, hardware security, and scripting.</p>
+								<div class="resource-grid">
+									<div class="resource-card"><h3>VLSI and Digital Design</h3><a href="https://ivlsi.com/" target="_blank">IVLSI</a><a href="https://vlsiresources.com/" target="_blank">VLSI Resources</a><a href="https://asic-world.com/" target="_blank">ASIC World</a><a href="http://www.gstitt.ece.ufl.edu/" target="_blank">Dr. Greg Stitt</a><a href="https://www.edaplayground.com/" target="_blank">EDA Playground</a></div>
+									<div class="resource-card"><h3>RTL and Verification</h3><a href="http://verificationexcellence.in/tutorials/" target="_blank">Verification Excellence</a><a href="https://verificationguide.com/" target="_blank">Verification Guide</a><a href="https://verificationguide.com/systemverilog/systemverilog-tutorial/" target="_blank">SystemVerilog Tutorial</a><a href="https://www.asictronix.com/uvm-tutorial-for-beginners-getting-started/" target="_blank">UVM Tutorial</a></div>
+									<div class="resource-card"><h3>Hardware Security</h3><a href="https://trust-hub.org/" target="_blank">Trust-Hub</a><a href="http://cad4security.org/" target="_blank">CAD4Security</a><a href="https://cadforassurance.org/" target="_blank">CAD for Assurance</a><a href="https://opencores.org/" target="_blank">OpenCores</a></div>
+									<div class="resource-card"><h3>Scripting and Build Tools</h3><a href="https://www.tutorialspoint.com/unix/shell_scripting.htm" target="_blank">Unix Shell Scripting</a><a href="https://www.tutorialspoint.com/makefile/index.htm" target="_blank">Makefile Tutorial</a><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" target="_blank">CMake Tutorial</a><a href="https://www.tutorialspoint.com/tcl-tk/index.htm" target="_blank">Tcl Tutorial</a></div>
+								</div>
+							</section>
 						</div>
-						
-					</div>
-				</div>
-
-				<!-- Research Projects -->
-					<div class="section-panel" id="projectsContent">
-					<div class="content-inner">
-
-						<!-- Page Title -->
-						<h2 class="section-title mt-3">Research Projects</h2>
-
-						<!-- Project 1: DRAM Reliability and Security Assessment -->
-						<div class="row mt-4">
-							<h3>DRAM Reliability and Security Assessment</h3>
-							<p class="mt-2 justify">
-								At The University of Alabama in Huntsville, my research focused on evaluating DRAM reliability and security, funded by the National Science Foundation (NSF). I developed a C++ testing framework for DDR3 DRAM on Xilinx ML605 FPGA to control and analyze retention errors under stress, yielding insights into aging vulnerabilities in memory modules. These findings were published in <a href="https://doi.org/10.3390/app12094332" class="link-dark" target="_blank">Applied Sciences</a>, contributing to enhanced memory reliability.
-							</p>
-						</div>
-
-
-						<!-- Project 2: DARPA AISS Project - Automatic Implementation of Secure Silicon -->
-						<div class="row mt-4">
-							<h3>Automatic Implementation of Secure Silicon (DARPA AISS Project)</h3>
-							<p class="mt-2 justify">
-								As part of the <a href="https://www.darpa.mil/program/automatic-implementation-of-secure-silicon" class="link-dark" target="_blank">DARPA AISS Project</a> at the Florida Institute for Cybersecurity (FICS) Research, I developed scalable security solutions to enhance IP and SoC resilience against side-channel threats. Key contributions included a Python-based framework to assess power side-channel vulnerabilities at the RTL level and the development of security primitives for device lifecycle management, such as secure boot protocols and a silicon odometer for lifecycle tracking. This collaborative project with Synopsys has yielded published results in the <a href="https://eprint.iacr.org/2021/1654" class="link-dark" target="_blank">Cryptology ePrint Archive</a>, and presented in <a href="https://ieeexplore.ieee.org/abstract/document/10130190" class="link-dark" target="_blank">IEEE Xplore</a>, and featured in <a href="https://semiengineering.com/testing-chips-for-security/" class="link-dark" target="_blank">Semiconductor Engineering</a>.
-							</p>
-						</div>
-					
-
-						<!-- Project 3: CYAN Research Program -->
-						<div class="row mt-4">
-							<h3>CYAN Research Program</h3>
-							<p class="mt-2 justify">
-								In the <a href="https://cyan.engineering.osu.edu/" class="link-dark" target="_blank">CYAN Research Program</a>, I contributed to advancing pre-silicon side-channel security for cryptographic designs. I implemented an automated CAD toolflow to evaluate gate-level, physical-design-aware electromagnetic (EM) side-channel vulnerabilities, enabling rapid security sign-off at the pre-silicon stage. This toolflow was presented at the GOMACTech Workshop 2023. Currently, I am developing a Graph Neural Network (GNN)-based framework to model power and EM side-channel leakage, further strengthening cryptographic resilience against physical attacks by identifying potential vulnerabilities during early design stages.
-							</p>
-						</div>
-
-
-						<!-- Project 4: PMU-Based Side-Channel Profiling -->
-						<div class="row mt-4">
-							<h3>PMU-Based Side-Channel Profiling of User Activity</h3>
-							<p class="mt-2 justify">
-								In this ongoing project, I developed techniques using Performance Monitoring Units (PMUs) to detect CPU workload patterns, with an emphasis on cache side-channel profiling to expose speculative execution vulnerabilities. This approach sheds light on modern processor security challenges, underscoring the importance of PMU data in analyzing user activity patterns.
-							</p>
-						</div>
-
-						<!-- Project 5: Synopsys Internship - Secure Embedded Applications -->
-						<div class="row mt-4">
-							<h3>Secure Embedded Applications (Synopsys Inc.)</h3>
-							<p class="mt-2 justify">
-								As a Graduate Technical Intern at <a href="https://www.synopsys.com/" class="link-dark" target="_blank">Synopsys Inc.</a>, I worked on secure boot protocols and cryptographic applications for embedded systems, including TLS communication for data integrity. I integrated ASCON lightweight cryptography, enhancing cryptographic resilience against side-channel attacks, which further strengthened Synopsys’s security IP portfolio.
-							</p>
-						</div>
-
-						<!-- Project 6: EM-Based Side-Channel Disassembler -->
-						<div class="row mt-4">
-							<h3>EM-Based Side-Channel Disassembler</h3>
-							<p class="mt-2 justify">
-								Currently, in collaboration with Drs. Tehranipoor and Farahmandi, I am developing an EM-based disassembler to recover executed instructions from electromagnetic (EM) emissions. This disassembler supports firmware verification by analyzing EM signals for defense and critical infrastructure applications, helping to verify software integrity and detect anomalies in secure systems.
-							</p>
-						</div>
-
-					</div>
-				</div>
-
-
-
-				<!-- Publications -->
-					<div class="section-panel" id="publicationsContent">
-					<div class="content-inner">
-
-						<!-- Page Title -->
-						<h2 class="section-title mt-3">Publications</h2>
-
-						<ul>
-							<li>
-								<strong>MK Bepary</strong>, A Basu, S Mohammad, R Hassan, F Farahmandi, M Tehranipoor "SPY-PMU: Side-Channel Profiling of Your Performance Monitoring Unit to Leak Remote User Activity." <em>Cryptology ePrint Archive</em> (2025). <a href="https://eprint.iacr.org/2025/014" class="link-dark" target="_blank">link</a>
-							</li>
-							<li>
-								<strong>MK Bepary</strong>, T Zhang, F Farahmandi, M Tehranipoor. "PreSCAN: A Comprehensive Review of Pre-Silicon Physical Side-Channel Vulnerability Assessment Methodologies." <em>Chips</em> 3, no. 3 (2024). <a href="https://doi.org/10.3390/chips3040016" class="link-dark" target="_blank">link</a>
-							</li>
-							<li>
-								T Rahman, <strong>MK Bepary</strong>, MSUl Haque, M Tehranipoor, F Rahman. "Design and Security-Mitigation of Custom and Configurable Hardware Cryptosystems," <em>2023 IEEE 16th Dallas Circuits and Systems Conference (DCAS)</em>, Denton, TX, USA, pp. 1-6. <a href="https://ieeexplore.ieee.org/abstract/document/10130190" class="link-dark" target="_blank">link</a>
-							</li>
-							<li>
-								<strong>MK Bepary</strong>, F Rahman, F Farahmandi, M Tehranipoor. "Security Assessment and Modeling of EM Side-channel Leakage at Gate-Level." <em>Annual GOMACTech Workshop 2023</em>, USA. <a href="https://www.researchgate.net/publication/369890652_EMSC-GL_Security_Assessment_and_Modeling_of_Electromagnetic_Side-channel_Leakage_at_Gate-level" class="link-dark" target="_blank">link</a>
-							</li>
-
-							<li>
-								B Ahmed, <strong>MK Bepary</strong>, N Pundir, M Borza, et al. "Quantifiable Assurance: From IPs to Platforms." <em>Cryptology ePrint Archive</em> (2021). <a href="https://eprint.iacr.org/2021/1654" class="link-dark" target="_blank">link</a>
-							</li>
-							<li>
-								<strong>MK Bepary</strong>, BMSB Talukder, MT Rahman. "DRAM Retention Behavior with Accelerated Aging in Commercial Chips." <em>Applied Sciences</em> 12, no. 9 (2022): 4332. <a href="https://www.mdpi.com/2076-3417/12/9/4332" class="link-dark" target="_blank">link</a>
-							</li>
-
-							<!-- Book Chapters -->
-							<li>
-								Contributed to writing a book chapter titled "CAD for Power Side-Channel Detection" in <em>CAD for Hardware Security</em>, edited by F Farahmandi et al., Springer, 2023. <a href=https://link.springer.com/chapter/10.1007/978-3-031-26896-0_6 class="link-dark" target="_blank">link</a>
-							</li>
-							<li>
-								Contributed to writing a book chapter titled "Counterfeit and Recycled IC Detection" in <em>Hardware Security Primitives</em>, edited by M Tehranipoor et al., Springer, 2022. <a href="https://doi.org/10.1007/978-3-031-19185-5_16" class="link-dark" target="_blank">link</a>
-							</li>
-						</ul>
-
-						<!-- Poster Presentations -->
-						<h4 class="section-title mt-5">Poster Presentations</h4>
-
-						<ul>
-							<li>
-								Presented a poster titled "Quantitative Assessment of Power Side-Channel Vulnerability at Pre-silicon Stages" at <em>2023 Florida Semiconductor Week</em>, Gainesville, FL, January 2023. <a href="https://github.com/mkbepary/pre-silicon_side-channel" class="link-dark" target="_blank">GitHub link</a>
-							</li>
-							<li>
-								Presented a poster titled "Electromagnetic Side-Channel Leakage Modeling and Security Assessment at Pre-Silicon Stages" at <em>2022 Trusted and Assurance Microelectronics (TAME) Forum</em>, Columbus, OH, September 2022. <a href="https://github.com/mkbepary/emsca_presilicon" class="link-dark" target="_blank">GitHub link</a>
-							</li>
-						</ul>
-
-						<!-- Awards & Honors -->
-						<h4 class="section-title mt-5">Awards & Honors</h4>
-
-						<ul>
-							<li>
-								<strong>1st Place</strong> in the <em>2022 IEEE HOST Microelectronics Security Challenge</em>. <a href="https://github.com/mkbepary/host_ip_security_challenge" class="link-dark" target="_blank">GitHub link</a>
-							</li>
-							<li>
-								Awarded the <strong>2022 IEEE HOST Travel Grant</strong> for participation and presentation at the IEEE Symposium on Hardware-Oriented Security and Trust.
-							</li>
-							<li>
-								<strong>Undergraduate Dean’s List</strong> for academic excellence, 2015.
-							</li>
-							<li>
-								Recipient of the <strong>Education Board Merit Scholarship</strong> for outstanding performance in Secondary and Higher Secondary examinations.
-							</li>
-						</ul>
-
-
-					</div>
-				</div>
-
-
-
-				<!-- Resources Section -->
-					<div class="section-panel" id="resourcesContent">
-					<div class="content-inner">
-						
-						<!-- Resources Section -->
-
-						
-						<!-- Page Title -->
-						<h2 class="section-title mt-3">Resources</h2>
-						<p class="mt-2">A collection of beginner-friendly and open-source resources for VLSI, hardware security, SoC design, RTL design, verification, and scripting.</p>
-
-						<!-- Resources List -->
-						<ul>
-							<!-- VLSI and Digital Design -->
-							<li>
-								<strong>IVLSI</strong> - Tutorials and resources on VLSI concepts and design. 
-								<a href="https://ivlsi.com/" class="link-dark" target="_blank">https://ivlsi.com/</a>
-							</li>
-							<li>
-								<strong>VLSI Resources</strong> - Comprehensive VLSI resources for beginners and professionals. 
-								<a href="https://vlsiresources.com/" class="link-dark" target="_blank">https://vlsiresources.com/</a>
-							</li>
-							<li>
-								<strong>ASIC World</strong> - Tutorials on digital design, Verilog, VHDL, and SystemVerilog. 
-								<a href="https://asic-world.com/" class="link-dark" target="_blank">https://asic-world.com/</a>
-							</li>
-							<li>
-								<strong>Dr. Greg Stitt's Website</strong> - Educational resources on embedded systems and hardware design. 
-								<a href="http://www.gstitt.ece.ufl.edu/" class="link-dark" target="_blank">http://www.gstitt.ece.ufl.edu/</a>
-							</li>
-							<li>
-								<strong>EDA Playground</strong> - Online platform for writing and simulating Verilog, VHDL, and SystemVerilog code. 
-								<a href="https://www.edaplayground.com/" class="link-dark" target="_blank">https://www.edaplayground.com/</a>
-							</li>
-
-							<!-- Verification and SystemVerilog -->
-
-							<li>
-								<strong>Verification Excellence</strong> - Tutorials and resources for verification and design. 
-								<a href="http://verificationexcellence.in/tutorials/" class="link-dark" target="_blank">http://verificationexcellence.in/tutorials/</a>
-							</li>
-							<li>
-								<strong>Verification Guide</strong> - Tutorials on verification, SystemVerilog, and UVM. 
-								<a href="https://verificationguide.com/" class="link-dark" target="_blank">https://verificationguide.com/</a>
-							</li>
-							<li>
-								<strong>SystemVerilog Tutorial</strong> - SystemVerilog tutorials.
-								<a href="https://verificationguide.com/systemverilog/systemverilog-tutorial/" class="link-dark" target="_blank">https://verificationguide.com/systemverilog/systemverilog-tutorial/</a>
-							</li>
-							<li>
-								<strong>UVM Tutorial for Beginners by Asictronix</strong> - Beginner-friendly UVM tutorial. 
-								<a href="https://www.asictronix.com/uvm-tutorial-for-beginners-getting-started/" class="link-dark" target="_blank">https://www.asictronix.com/uvm-tutorial-for-beginners-getting-started/</a>
-							</li>
-
-							<!-- Hardware Security -->
-							<li>
-								<strong>Trust-Hub</strong> - Hardware security resources, benchmarks, and tutorials. 
-								<a href="https://trust-hub.org/" class="link-dark" target="_blank">https://trust-hub.org/</a>
-							</li>
-							<li>
-								<strong>CAD4Security</strong> - Hardware security resources, including benchmarks and tutorials. 
-								<a href="http://cad4security.org/" class="link-dark" target="_blank">http://cad4security.org/</a>
-							</li>
-							<li>
-								<strong>CAD For Assurance</strong> - Hardware security resources, including benchmarks and tutorials. 
-								<a href="https://cadforassurance.org/" class="link-dark" target="_blank">https://cadforassurance.org/</a>
-							</li>
-
-							<!-- System-on-Chip (SoC) Design -->
-							<li>
-								<strong>OpenCores</strong> - Open-source IP cores and SoC design resources. 
-								<a href="https://opencores.org/" class="link-dark" target="_blank">https://opencores.org/</a>
-							</li>
-
-							<!-- Scripting and Build Tools -->
-							<li>
-								<strong>Unix Shell Scripting Tutorial</strong> - Beginner-friendly guide on Unix shell scripting.
-								<a href="https://www.tutorialspoint.com/unix/shell_scripting.htm" class="link-dark" target="_blank">https://www.tutorialspoint.com/unix/shell_scripting.htm</a>
-							</li>
-							<li>
-								<strong>Makefile Tutorial by TutorialsPoint</strong> - Introduction to Makefiles for build automation.
-								<a href="https://www.tutorialspoint.com/makefile/index.htm" class="link-dark" target="_blank">https://www.tutorialspoint.com/makefile/index.htm</a>
-							</li>
-							<li>
-								<strong>CMake Tutorial</strong> - Beginner-friendly CMake guide.
-								<a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html" class="link-dark" target="_blank">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a>
-							</li>
-							<li>
-								<strong>Tcl Tutorial by TutorialsPoint</strong> - Introductory guide to Tcl scripting. 
-								<a href="https://www.tutorialspoint.com/tcl-tk/index.htm" class="link-dark" target="_blank">https://www.tutorialspoint.com/tcl-tk/index.htm</a>
-							</li>
-
-							<!-- Additional Resources -->
-
-
-						</ul>
-
-
-
-					</div>
-				</div>
-				</div>
-
-
-
-
-
+					</section>
+				</main>
 			</div>
 		</div>
 
-
-		<!-- Scripts -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 		<script src="assets/js/languageManager.js"></script>
-		<script src="assets/js/main.js?v=layout-2"></script>
-
-
-		
+		<script src="assets/js/main.js?v=revamp-1"></script>
 	</body>
-
 </html>
