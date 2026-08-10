@@ -1,172 +1,54 @@
 $(document).ready(function(){
 	const themeVersion = "revamp-1";
+	const sectionRoutes = {
+		aboutme: {
+			path: "/",
+			panel: "#aboutmeContent",
+			title: "Md Kawser Bepary | Hardware Security, RTL & Formal Verification"
+		},
+		experience: {
+			path: "/profile/",
+			panel: "#experienceContent",
+			title: "Profile | Md Kawser Bepary"
+		},
+		projects: {
+			path: "/research/",
+			panel: "#projectsContent",
+			title: "Research | Md Kawser Bepary"
+		},
+		publications: {
+			path: "/publications/",
+			panel: "#publicationsContent",
+			title: "Publications | Md Kawser Bepary"
+		},
+		resources: {
+			path: "/resources/",
+			panel: "#resourcesContent",
+			title: "Resources | Md Kawser Bepary"
+		}
+	};
 
 	// Options menu is hidden by default
 	$('#theme').hide();
 	$('#lan').hide();
 
-	// Handle 'About Me' content
-	$('#aboutme').click(function(e) {
+	$('#navbarList .nav-link').click(function(e) {
+		const route = sectionRoutes[this.id];
+		if (!route)
+			return;
+
 		e.preventDefault();
+		if (normalisePath(window.location.pathname) !== route.path)
+			window.history.pushState({ section: this.id }, "", route.path);
 
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-				// Update navbar
-				clearActiveLinks();
-				$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#aboutmeContent');
-		}
-
+		activateSection(this.id, sectionRoutes, true);
 	});
 
-	// Handle 'Publications' content
-	$('#publications').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#publicationsContent');
-		}
+	$(window).on("popstate", function() {
+		activateSection(routeIdFromPath(window.location.pathname, sectionRoutes), sectionRoutes, false);
 	});
 
-	// Handle 'Blog' content
-	$('#blog').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#blogContent');
-		}
-	});
-
-	// Handle 'Academic' content
-	$('#academic').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#academicContent');
-		}
-	});
-
-	// Handle 'Particular' content
-	$('#particular').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#particularContent');
-		}
-	});
-
-	// Handle 'Conferences' content
-	$('#conferences').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#conferencesContent');
-		}
-	});
-
-	// Handle 'Profile' content
-	$('#experience').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-	if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#experienceContent');
-		}
-	});
-
-	// Handle 'Research' content
-	$('#projects').click(function(e) {
-		e.preventDefault();
-
-		// If the div has already the class active, no need to reload the divs...
-		if(!$(this).hasClass('active')) {
-			// Update navbar
-			clearActiveLinks();
-			$(this).addClass('active');
-
-			// Hide other contents
-			clearActiveDivs();
-
-			// Show current content
-			activateDiv('#projectsContent');
-		}
-	});
-	
-	// Handle 'Resources' content
-$('#resources').click(function(e) {
-		e.preventDefault();
-
-	// If the div has already the class active, no need to reload the divs...
-if(!$(this).hasClass('active')) {
-		// Update navbar
-		clearActiveLinks();
-			$(this).addClass('active');
-
-		// Hide other contents
-		clearActiveDivs();
-
-		// Show current content
-		activateDiv('#resourcesContent');
-	}
-});
+	activateSection(routeIdFromPath(window.location.pathname, sectionRoutes), sectionRoutes, false);
 
 
 
@@ -231,7 +113,7 @@ if(!$(this).hasClass('active')) {
 
 	// If the user has the dark theme, then replace the light theme with the dark one
 	if (localStorage.theme == "dark") {
-		$("link[href^='assets/css/light.css']").remove();
+		$("link[href^='/assets/css/light.css'], link[href^='assets/css/light.css']").remove();
 		$('<link>').appendTo('head').attr({
 			type: 'text/css',
 			rel: 'stylesheet',
@@ -261,7 +143,7 @@ if(!$(this).hasClass('active')) {
 
 			localStorage.theme = "dark"
 
-			$("link[href^='assets/css/light.css']").remove();
+			$("link[href^='/assets/css/light.css'], link[href^='assets/css/light.css']").remove();
 			$('<link>').appendTo('head').attr({
 				type: 'text/css',
 				rel: 'stylesheet',
@@ -273,7 +155,7 @@ if(!$(this).hasClass('active')) {
 
 			localStorage.theme = "light"
 
-			$("link[href^='assets/css/dark.css']").remove();
+			$("link[href^='/assets/css/dark.css'], link[href^='assets/css/dark.css']").remove();
 			$('<link>').appendTo('head').attr({
 				type: 'text/css',
 				rel: 'stylesheet',
@@ -292,6 +174,47 @@ if(!$(this).hasClass('active')) {
         langManager.setLanguage(newLang);
     });
 });
+
+function normalisePath(path) {
+	if (!path || path === "")
+		return "/";
+
+	path = path.replace(/\/index\.html$/, "/");
+
+	if (path !== "/" && !path.endsWith("/"))
+		path += "/";
+
+	return path;
+}
+
+function routeIdFromPath(path, sectionRoutes) {
+	const currentPath = normalisePath(path);
+	const routeId = Object.keys(sectionRoutes).find(function(id) {
+		return sectionRoutes[id].path === currentPath;
+	});
+
+	return routeId || "aboutme";
+}
+
+function activateSection(routeId, sectionRoutes, scroll) {
+	const route = sectionRoutes[routeId] || sectionRoutes.aboutme;
+
+	clearActiveLinks();
+	$('#' + routeId).addClass('active');
+	clearActiveDivs();
+	activateDiv(route.panel, scroll);
+	updateRouteMetadata(route);
+}
+
+function updateRouteMetadata(route) {
+	const absoluteUrl = "https://mkbepary.github.io" + route.path;
+
+	document.title = route.title;
+	$("link[rel='canonical']").attr("href", absoluteUrl);
+	$("meta[property='og:url']").attr("content", absoluteUrl);
+	$("meta[property='og:title']").attr("content", route.title);
+	$("meta[name='twitter:title']").attr("content", route.title);
+}
 
 // Clears the active links
 function clearActiveLinks() {
@@ -318,11 +241,12 @@ function activateLink(elem) {
 }
 
 // Activates the div
-function activateDiv(divId) {
+function activateDiv(divId, scroll) {
 	$(divId).addClass('active');
 
 	// Scrolls to the content
-	scrollToContent(divId);
+	if (scroll)
+		scrollToContent(divId);
 }
 
 // Scrolls to the content
